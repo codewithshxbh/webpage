@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhendu Chakrabarti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/logo1.png" class="logo" alt="Logo of Shubhendu Chakrabarti">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SOCIALS</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">CONTACT ME</a></li>
+            </ul>
+        </nav>
+        <div class="detel">
+            <h1>Hey, I am
+                <br>Shubhendu <span>Chakrabarti</span>
+            </h1>
+            <h2 class="dynamic-text">I am a <span id="changing-text"></span></h2>
+            <a href="#">DOWNLOAD CV</a>
+            <a href="#">HIRE ME</a>
+        </div>
+        <div class="images">
+            <img src="images/shape.png" class="shape" alt="Decorative Shape">
+            <img src="images/boy.png" class="boy" alt="Illustration of a Boy">
+        </div>
+        <div class="about">
+            <div class="about-tiles">
+                <h1 class="about-section">About Me</h1>
+                <div class="tile">
+                    <img src="images/mongodb.png" alt="MongoDB">
+                    <h3>M</h3>
+                </div>
+                <div class="tile">
+                    <img src="images/express.png" alt="Express">
+                    <h3>E</h3>
+                </div>
+                <div class="tile">
+                    <img src="images/react.png" alt="React">
+                    <h3>R</h3>
+                </div>
+                <div class="tile">
+                    <img src="images/node.png" alt="Node.js">
+                    <h3>N</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            { text: 'Frontend Developer', color: '#ff0000' },
+            { text: 'UI/UX Designer', color: '#33ff57' },
+            { text: 'Backend Developer', color: '#3357ff' },
+        ];
+
+        let index = 0;
+        const changingTextElement = document.getElementById('changing-text');
+
+        function changeText() {
+            changingTextElement.textContent = phrases[index].text;
+            changingTextElement.style.color = phrases[index].color;
+
+            index = (index + 1) % phrases.length;
+        }
+
+        setInterval(changeText, 2000);
+        changeText();
+    </script>
+</body>
+</html>
